@@ -1,29 +1,29 @@
 # Project Title
 
-Deterministic Turing Machine Simulator using Python (with numpy, pandas, and requests)     
+Deterministic Turing Machine Simulator in python (with numpy, pandas, and requests)     
 # Overview of the Project
 
 This project implements a Deterministic Turing Machine (DTM) in Python that simulates how a theoretical Turing Machine reads, writes, and moves along a tape according to transition rules.
 
-To satisfy project requirements, the implementation integrates three external Python modules:
+To satisfy project requirements, the implementation integrate three external Python modules:
 
 numpy → for tape representation
 
-pandas → for storing the transition table
+pandas → for storing the transition tables
 
-requests → to demonstrate external data fetching (mock information)
+requests → to demonstrate external for data fetching (mock information)
 
-The simulator performs a sample operation called Unary Increment, where the input tape (e.g., "111") is transformed by appending one extra "1".
+The simulator perfroms a sample operation called Unary Increment, where the input tape (e.g., "111")  transformed by appending one extra "1".
 # Features
 
-✔ Simulates deterministic Turing Machine behavior
-✔ Tape stored using numpy array
-✔ Transition functions stored in a pandas DataFrame
-✔ Uses requests module for external information retrieval
-✔ Step-by-step execution using step()
-✔ Full simulation using run()
-✔ Works for any custom transition table
-✔ Clean OOP-based design
+ Simulates deterministic Turing Machine behavior
+ -Tape stored using a numpy array
+ -Transition functions stores in a pandas DataFrame
+ -Uses requests module for external information retrieval
+ -Step-by-step execution using step()
+ -Full simulation using run()
+ -Works for any custom transition table
+ -Clean OOP-based design
 
 #Technologies / Tools Used
 Tool / Module	Purpose
@@ -34,14 +34,14 @@ requests	Fetch TM info (dummy API)
 VS Code	IDE used for development
 GitHub	Version control & submission
 # Steps to Install & Run the Project
-1️⃣ Clone the Repository
+1️. Clone the Repository
 git clone <your-repository-link>
 cd turing-machine-simulator
 
-2️⃣ Install Required Modules
+2️. Install Required Modules
 pip install numpy pandas requests
 
-3️⃣ Run the Project
+3️. Run the Project
 python machine.py
 
 Expected Output:
