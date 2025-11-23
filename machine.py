@@ -1,29 +1,29 @@
 class TuringMachine:
-    def __init__(self, tape_string="", blank_symbol="_", initial_state="q0", final_states=None, transition_function=None):
-        self.tape = list(tape_string)
-        self.blank_symbol = blank_symbol
+    def __init__(self, tape_strng="", blank="_", initial_st="q0", final_st=None, transition_fnc=None):
+        self.tape = list(tape_strng)
+        self.blank = blank
         self.head = 0
-        self.state = initial_state
-        self.final_states = set(final_states) if final_states else set()
-        self.transition_function = transition_function if transition_function else {}
+        self.state = initial_st
+        self.final_states = set(final_st) if final_st else set()
+        self.transition_function = transition_fnc if transition_fnc else {}
 
     def step(self):
         """Execute one transition based on current state and tape symbol."""
-        current_symbol = self.tape[self.head] if self.head < len(self.tape) else self.blank_symbol
+        crnt_smbl = self.tape[self.head] if self.head < len(self.tape) else self.blank
         
-        key = (self.state, current_symbol)
+        key = (self.state, crnt_smbl)
         if key not in self.transition_function:
-            return False  # No valid transition → halt
+            return False 
 
         new_symbol, direction, new_state = self.transition_function[key]
 
-        # Write symbol
+        # Write the symbol
         if self.head < len(self.tape):
             self.tape[self.head] = new_symbol
         else:
             self.tape.append(new_symbol)
 
-        # Move head
+        # Move the head
         if direction == "R":
             self.head += 1
         elif direction == "L":
@@ -41,13 +41,13 @@ class TuringMachine:
         return "".join(self.tape), self.state
 
 if __name__ == "__main__":
-    # Example: Unary increment Turing Machine (adds 1 to the end)
+    # Example: Unary increment turing machin (ads 1 to the end)
     tm = TuringMachine(
-        tape_string="111",
-        blank_symbol="_",
-        initial_state="q0",
-        final_states={"qf"},
-        transition_function={
+        tape_strng="111",
+        blank="_",
+        initial_st="q0",
+        final_st={"qf"},
+        transition_fnc={
             ("q0", "1"): ("1", "R", "q0"),
             ("q0", "_"): ("1", "N", "qf"),
         }
@@ -56,4 +56,3 @@ if __name__ == "__main__":
     output, final_state = tm.run()
     print("Final Tape:", output)
     print("Final State:", final_state)
-
